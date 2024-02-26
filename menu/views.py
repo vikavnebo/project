@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+from menu.models import Item
+
+
+class IndexPage(TemplateView):
+    template_name = "menu/index.html"
+
+
+class Menu(TemplateView):
+    template_name = "menu/index.html"

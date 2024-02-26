@@ -1,0 +1,20 @@
+<ol reversed>
+{% for item in items_for_display %}
+
+    <li style="list-style-type:none">
+
+        {% if item.url != selected_item.url %}
+            <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+        {% else %}
+            {{ item.name }}
+        {% endif %}
+
+
+        {% if item.children %}
+            {% include 'menu/nested_menu.html' with items_for_display=item.children %}
+        {% endif %}
+
+    </li>
+
+{% endfor %}
+</ol>
